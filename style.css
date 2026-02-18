@@ -94,7 +94,7 @@
     }
 }
 .drink-card {
-  height: 350px;
+  height: 380px;
 }
 
 .drink-card img {
@@ -110,4 +110,161 @@
   background: #f8f9fa;
   text-align: center;
   height: 100%;
+}
+.image-card {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.image-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Drink name styling */
+.drink-title {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  color: white;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: 2px 3px 8px rgba(0,0,0,0.7);
+  z-index: 2;
+}
+
+    .parallax-section {
+      background-image: url("Images/effect.jpg"); /* Add your image */
+      min-height: 400px;
+
+      background-attachment: fixed;   /* PARALLAX EFFECT */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .parallax-section h2 {
+      font-size: 48px;
+      font-weight: bold;
+      background: rgba(0,0,0,0.5);
+      padding: 20px 40px;
+      border-radius: 10px;
+    }
+
+.parallax-content {
+  position: relative;
+  color: white;
+}
+
+/* Italic curved-style text */
+.italic-text {
+  font-size: 35px;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 3px;
+  transform: skew(-5deg);
+  text-shadow: 2px 4px 10px rgba(0,0,0,0.7);
+}
+.opening-section {
+  background-color: #f5efe6; /* soft cream shade */
+  padding: 60px 0;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #5a3e2b;
+}
+
+.coffee-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #6b4f3a;
+  margin-bottom: 30px;
+}
+
+.hours-box {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.hours-box p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.quote-box {
+  background: #e8dccb;
+  padding: 30px;
+  border-radius: 15px;
+  font-style: italic;
+  color: #4b2e1e;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+.footer-section {
+  background-color: #AB7743;
+  color: #ffffff;
+  padding: 40px 0 10px 0;
+}
+
+.footer-brand {
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.footer-heading {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.social-icons a {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 12px;
+  font-size: 14px;
 }
