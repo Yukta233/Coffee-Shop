@@ -268,3 +268,130 @@
   padding-top: 12px;
   font-size: 14px;
 }
+/* ================= GLOBAL RESPONSIVE FIX ================= */
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Make container fluid responsive */
+#container {
+  max-width: 100%;
+}
+
+/* ================= HERO SECTION RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .heading {
+    left: 40%;
+    transform: translate(-50%, -20%);
+  }
+}
+
+@media (max-width: 992px) {
+  .heading {
+    width: 90%;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 520px;
+  }
+
+  .heading {
+    width: 95%;
+    top: 50%;
+    transform: translate(-50%, -40%);
+  }
+
+  .heading h1 {
+    font-size: 2rem;
+  }
+
+  .heading p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    height: 450px;
+  }
+
+  .heading h1 {
+    font-size: 1.7rem;
+  }
+
+  .heading p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ================= SERVICES SECTION RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .services {
+    padding: 30px 15px;
+  }
+
+  .services-content {
+    gap: 20px;
+  }
+}
+
+/* ================= PARALLAX RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .parallax-section {
+    background-attachment: scroll; /* better mobile support */
+    min-height: 300px;
+  }
+
+  .italic-text {
+    font-size: 24px;
+  }
+}
+
+/* ================= OPENING SECTION RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .opening-section {
+    padding: 40px 15px;
+    text-align: center;
+  }
+
+  .hours-box {
+    margin-bottom: 25px;
+  }
+
+  .quote-box {
+    margin-top: 20px;
+  }
+}
+
+/* ================= FOOTER RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-brand {
+    font-size: 24px;
+  }
+
+  .footer-text {
+    font-size: 14px;
+  }
+
+  .footer-links,
+  .social-icons {
+    margin-top: 15px;
+  }
+}
