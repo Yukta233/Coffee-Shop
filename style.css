@@ -5,6 +5,9 @@
     margin-left: 30px;
     padding: 4px;
 }
+.navbar-brand{
+  font-weight: 500;
+}
 #container{
     width:100%;
 }
@@ -17,12 +20,29 @@
     position:relative;
     
 }
+.view-menu-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #d37f43; /* Coffee Brown */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.view-menu-btn:hover {
+    background-color: #5a3d2b; /* Darker Brown */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
 
 .heading h1{
     color:white;
     font-family:Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
-    font-size: 3.3em;
-    
+    font-size: 3.3em;   
 }
 .heading p{
     color:white;
@@ -71,6 +91,13 @@
     font-size: 14px;
     line-height: 1.6;
     text-align: left;
+}
+.blog-hero{
+  background-image: url("https://images.ctfassets.net/27hc2gu70btq/626x86LmkZuitdHHu1Cpfe/56bab9857f1ee70938260e10d9ea25f3/Order-Online_Banner-1600x464-v30.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color:white
 }
 @media (max-width: 992px) {
     .services-content {

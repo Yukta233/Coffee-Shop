@@ -8,10 +8,196 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <style>
-        
+        #container{
+            width:100%;
+        }
+        .hero2{
+          height:400px;
+          background-image: url(Images/pexels-ifreestock-585750.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          position: relative;
+        }
+        .heading2{
+          color:  #f1e6da;
+          width:400px;
+          position: absolute;
+          margin-top: 120px;
+          margin-left: 110px;
+          font-weight: 700;
+        }
+        .heading2 h2{
+            font-style: italic;
+        }
+        /* ===== Tabs ===== */
+
+.menu-tabs {
+    background-color: #75152d;
+    text-align: center;
+    padding: 16px;
+}
+
+.tab {
+    background: none;
+    border: none;
+    font-size: 18px;
+    margin: 0 25px;
+    color: white;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+
+.tab.active {
+    border-bottom: 2px solid white;
+}
+
+/* ===== Menu Section ===== */
+
+/* ================= MENU SECTION ================= */
+
+.menu-section {
+    padding: 70px 8%;
+    background-color: #f8f5f2;
+}
+/* Hide inactive sections */
+.menu-content {
+    display: none;
+}
+
+.menu-content.active {
+    display: block;
+}
+
+
+/* ================= SUB SECTION (CLASSICS, LATTES etc) ================= */
+
+.menu-category {
+    margin-bottom: 80px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.menu-category h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.menu-category p {
+    margin-bottom: 40px;
+    color: #555;
+}
+
+
+/* ================= CARD CONTAINER ================= */
+
+/* CARD CONTAINER */
+/* CARD CONTAINER */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   /* centers incomplete rows */
+    gap: 30px;                 /* reduced spacing */
+}
+
+
+/* CARD */
+.menu-card {
+    flex: 0 0 calc(25% - 15px);   /* exactly 4 per row */
+    max-width: calc(20% - 15px);
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+.menu-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-card h3 {
+    margin: 15px 0 5px;
+    font-size: 1.5rem;
+}
+
+.menu-card p {
+    color: #B08968;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+
+    .menu-card {
+        flex: 0 1 45%;   /* 2 per row */
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+    .menu-card {
+        flex: 0 1 100%;  /* 1 per row */
+    }
+
+    .menu-category {
+        margin-bottom: 60px;
+    }
+}
+/* Tablet */
+@media (max-width: 992px) {
+    .menu-card {
+        flex: 0 0 calc(40% - 10px);
+        max-width: calc(40% - 10px);
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
     </style>
 </head>
+<script>
+  function showMenu(sectionId) {
+
+    // Hide all sections
+    document.querySelectorAll('.menu-content').forEach(section => {
+        section.classList.remove('active');
+    });
+
+    // Remove active from tabs
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    // Show selected section
+    document.getElementById(sectionId).classList.add('active');
+
+    // Highlight clicked tab
+    event.target.classList.add('active');
+}
+
+</script>
 <body>
+  
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html">Mocha Muse</a>
@@ -30,7 +216,7 @@
           <a class="nav-link active" href="about.html">AboutUs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="gallery.html" >Gallery</a>
+          <a class="nav-link active" href="blog.html" >Blog</a>
         </li>
          <li class="nav-item">
           <a class="nav-link active" href="contact.html" >Contact</a>
@@ -39,8 +225,368 @@
     </div>
   </div>
 </nav>
-<div class="container">
+<div class="container2">
+<div class="hero2">
+  <div class="heading2">
+  <h2>Our Menu</h2>
+  <p>Our menu’s full of the good stuff. Whatever your diet or preferences, there’s enough choice for everyone.</p>
+  </div>
 </div>
+<!-- MENU TABS -->
+
+<!-- ===== TABS ===== -->
+<div class="menu-tabs">
+    <button class="tab active" onclick="showMenu('hot')">Hot Coffee</button>
+    <button class="tab" onclick="showMenu('cold')">Cold Coffee</button>
+    <button class="tab" onclick="showMenu('food')">Food</button>
+</div>
+
+
+<div class="menu-wrapper">
+
+    <!-- ================= HOT COFFEE ================= -->
+    <div id="hot" class="menu-content active">
+
+        <!-- CLASSICS -->
+        <div class="menu-category">
+            <h2>CLASSICS</h2>
+            <p>Timeless coffee favourites crafted to perfection, brewed beverages, generally featuring a balance of rich coffee flavor with steamed milk or water.</p>
+
+            <div class="card-container">
+                <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Hot-Beverages/HotBeverages_08_Doppio.png" alt="espresso">
+                    <h3>Espresso</h3>
+                    <span>₹120</span>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Hot-Beverages/HotBeverages_03_Americano.png" alt="">
+                    <h3>Americano</h3>
+                    <span>₹150</span>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Hot-Beverages/HotBeverages_02_Cappuccino.png" alt="cappuccino">
+                    <h3>Cappuccino</h3>
+                    <span>₹170</span>
+                </div>
+                                <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Hot-Beverages/HotBeverages_06_CaramelMacchiato.png" alt="">
+                    <h3>Macchiato</h3>
+                    <span>₹170</span>
+                </div>
+                                <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Hot-Beverages/HotBeverages_05_FlatWhite.png" alt="">
+                    <h3>Flat White</h3>
+                    <span>₹170</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Hot-Beverages/HotBeverages_04_CafeMocha.png" alt="">
+                    <h3>Cafe Mocha</h3>
+                    <span>₹180</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- LATTES -->
+        <div class="menu-category">
+            <h2>LATTES</h2>
+            <p>Smooth espresso blended with creamy milk.</p>
+
+            <div class="card-container">
+                <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Hot-Beverages/HotBeverages_01_Latte.png" alt="">
+                    <h3>Classic Latte</h3>
+                    <span>₹180</span>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://images.ctfassets.net/27hc2gu70btq/hzwtBNBzb6asCSYrCTxNG/5a290a688ecbecff6f8bec826ed4d1bd/320-x-242px_Sanish-latte__1_.png" alt="">
+                    <h3>Hot spanish Latte</h3>
+                    <span>₹200</span>
+                </div>
+                 <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1764578026445" alt="">
+                    <h3>Biscoff Latte</h3>
+                    <span>₹200</span>
+                </div>
+            </div>
+        </div>
+                <div class="menu-category">
+            <h2>NON-COFFEE HOT DRINKS</h2>
+            <p>Rich, indulgent and refreshing blended with non coffee materials </p>
+
+            <div class="card-container">
+                <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Hot-Beverages/HotBeverages_17_KadakChai.png" alt="">
+                    <h3>Kadak Chai</h3>
+                    <span>₹80</span>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://images.ctfassets.net/27hc2gu70btq/7ys3VhvWrJAk1Q76rELSjh/febe3bd0d7c968d1d92b9916a4b68af1/Costa-Menu_Green-Tea.png" alt="">
+                    <h3>Green Tea</h3>
+                    <span>₹60</span>
+                </div>
+                 <div class="menu-card">
+                    <img src="https://images.ctfassets.net/27hc2gu70btq/4BCNAwY8hFQZLGctHzDiNn/cc16ffe288dcb48234c40300b171ac9c/Costa-Menu_hOT-CHOCOLATE.png" alt="">
+                    <h3>Hot chocolate</h3>
+                    <span>₹130</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1770009135793" alt="">
+                    <h3>Matcha Latte</h3>
+                    <span>₹160</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ================= COLD COFFEE ================= -->
+    <div id="cold" class="menu-content">
+
+        <div class="menu-category">
+            <h2>COLD CLASSICS</h2>
+            <p>Blended in milk to create a perfect classic cold coffee. Treat yourself to something simply delightful.</p>
+
+            <div class="card-container">
+                <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Cold-Beverages/ColdBeverages_01_ColdCoffee.png" alt="">
+                    <h3>Cold Coffee</h3>
+                    <span>₹180</span>
+                </div>
+                  <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1764577533284" alt="">
+                    <h3>Biscoff cold coffee</h3>
+                    <span>₹220</span>
+                </div>
+                  <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Cold-Beverages/ColdBeverages_10_JavaChipIcedCapp.png" alt="">
+                    <h3>Java Chipp ice Capp</h3>
+                    <span>₹200</span>
+                </div>
+                  <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Cold-Beverages/ColdBeverages_12_CaramelIcedCapp.png" alt="">
+                    <h3>Caramel Iced Capp</h3>
+                    <span>₹240</span>
+                </div>
+                 <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Cold-Beverages/ColdBeverages_08_FrozenFrenchVanillaLatte.png" alt="">
+                    <h3>Frozen French Vanilla</h3>
+                    <span>₹200</span>
+                </div>
+            </div>
+        </div>
+                <div class="menu-category">
+            <h2>FRAPPES</h2>
+            <p>Deliciously rich and chocolatey frappes</p>
+
+            <div class="card-container">
+                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1759738506213" alt="">
+                    <h3>Strawberry Frappe</h3>
+                    <span>₹200</span>
+                </div>
+                                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1759738460722" alt="">
+                    <h3>Banoffee Frappe</h3>
+                    <span>₹220</span>
+                </div>
+                                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1759738239396" alt="">
+                    <h3>Chocolate brownie Frappee</h3>
+                    <span>₹240</span>
+                </div>
+                                <div class="menu-card">
+                    <img src="https://images.ctfassets.net/27hc2gu70btq/7EVh3ru8HLDr5hyljcOvyP/25b44ec873c838465eb2377566d25f81/Costa-Menu_Magnifico-Cold-Coffee.png" alt="">
+                    <h3>Colf coffee with icecream</h3>
+                    <span>₹230</span>
+                </div>
+            </div>
+        </div>
+                <div class="menu-category">
+            <h2>Iced coffee</h2>
+            <p>Blended iced coffee drinks for refreshing moments.</p>
+
+            <div class="card-container">
+                <div class="menu-card">
+                    <img src="https://images.ctfassets.net/27hc2gu70btq/6oYg5vc4GpZIyyvCsPwghc/2cae0478428ae9f825d60da192661b1c/Costa-Menu_Iced_Cappuccino.png" alt="">
+                    <h3>Iced Cappuccino</h3>
+                    <span>₹180</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.ctfassets.net/27hc2gu70btq/5dhb5pFkfHUM7bXkqW0qaJ/19f79d0c7c2fd05a9e37d34ef27becd8/Costa-Menu_Iced_Spanish_Latte.png" alt="">
+                    <h3>Iced latte</h3>
+                    <span>₹180</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.ctfassets.net/27hc2gu70btq/azzydmBaJLo50xnUbYL47/c1e7edf9a135718e444e0833a26af21d/Costa-Menu_Iced-Chocolate.png" alt="">
+                    <h3>Iced Chocolate</h3>
+                    <span>₹180</span>
+                </div>
+            </div>
+        </div>
+
+            <div class="menu-category">
+            <h2>ICED TEA/LEMONADES</h2>
+            <p>Brewed English Breakfast tea poured over a glass of ice.</p>
+
+            <div class="card-container">
+                <div class="menu-card">
+                    <img src="https://images.ctfassets.net/27hc2gu70btq/1dqxK2qARLLo2SvSai8xMN/17f3930ea7805998bc08d977eaa35d20/Costa-Menu_Costa-Coffeee0802.png" alt="">
+                    <h3>Lemon Iced Tea</h3>
+                    <span>₹120</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.ctfassets.net/27hc2gu70btq/22doRaSDpINoNb1ccVMY9j/5c4159444ebfbe6ef61ea3a8c8369009/Costa-Menu_Costa-Coffeee0801.png" alt="">
+                    <h3>Peace Iced Tea</h3>
+                    <span>₹130</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOD ================= -->
+    <div id="food" class="menu-content">
+
+        <div class="menu-category">
+            <h2>BREAKFAST/ALL DAY</h2>
+            <p>Tasty food served all-day, every day! Choose from our wide range of made-to-order sandwiches, wraps, flatbreads and more. Our menu is packed with flavour!</p>
+
+            <div class="card-container">
+                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1733316979420" alt="">
+                    <h3>Mushroom and cheese sandwich</h3>
+                    <span>₹250</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1733317247682" alt="">
+                    <h3>Chicken and cheese sandwich</h3>
+                    <span>₹330</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1746618845447" alt="">
+                    <h3>Chicken tikka crossiant</h3>
+                    <span>₹400</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1751266439325" alt="">
+                    <h3>Chicken tikka wrap</h3>
+                    <span>₹250</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1759737792765" alt="">
+                    <h3>Chilly cheese toastie</h3>
+                    <span>₹220</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1746618649127" alt="">
+                    <h3>Egg Bagel</h3>
+                    <span>₹240</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1765771833422" alt="">
+                    <h3>Paneer parcel</h3>
+                    <span>₹150</span>
+                </div>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h2>BAKED GOODS</h2>
+            <p>The perfect pairing with your cup of coffee! Try our signature donuts & Timbits, muffins and cookies!</p>
+
+            <div class="card-container">
+                <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Baked-Goods/BakedGoods_01_ButterCroissant.png" alt="">
+                    <h3>Butter Croissant</h3>
+                    <span>₹150</span>
+                </div>
+                 <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Baked-Goods/BakedGoods_02_AlmondCroissant.png" alt="">
+                    <h3>Almond Croissant</h3>
+                    <span>₹180</span>
+                </div>
+                 <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Baked-Goods/BakedGoods_03_ChocolateCroissant.png" alt="">
+                    <h3> Chocolate Croissant</h3>
+                    <span>₹200</span>
+                </div>
+                 <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Baked-Goods/BakedGoods_05_BlueberryMuffin.png" alt="">
+                    <h3>Blueberry Muffin</h3>
+                    <span>₹150</span>
+                </div>
+                 <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Baked-Goods/BakedGoods_05_TripleChocolateCookie.png" alt="">
+                    <h3>Double chocolate cookies</h3>
+                    <span>₹140</span>
+                </div>
+                 <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Baked-Goods/BakedGoods_06_ChocolateDipDonut.png" alt="">
+                    <h3>Chocolate Dip Donut</h3>
+                    <span>₹250</span>
+                </div>
+                    <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Baked-Goods/BakedGoods_07_VanillaDipDonut.png" alt="">
+                    <h3>Vanilla Dip Donut</h3>
+                    <span>₹250</span>
+                </div>
+                    <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Baked-Goods/BakedGoods_10_ChocolateBrownieDonut.png" alt="">
+                    <h3>Chocolate brownie Donut</h3>
+                    <span>₹290</span>
+                </div>
+            </div>
+        </div>
+<div class="menu-category">
+            <h2>DESSERTS</h2>
+            <p>Indulge in our delicious desserts! Pick from a variety of cakes and brownies.</p>
+
+            <div class="card-container">
+                <div class="menu-card">
+                    <img src="https://tims-assets.s3.ap-south-1.amazonaws.com/assets/product_images/Dessert/Dessert_07_ChocolateBrownie.png" alt="">
+                    <h3>Chocolate Brownie</h3>
+                    <span>₹270</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1760617607954" alt="">
+                    <h3>Tea Cake</h3>
+                    <span>₹180</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1750243846534" alt="">
+                    <h3>Classic Cheesecake</h3>
+                    <span>₹250</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1738236539674" alt="">
+                    <h3>Biscoff Cheesecake</h3>
+                    <span>₹300</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://tims-image-dev.s3.ap-south-1.amazonaws.com/1749731017875" alt="">
+                    <h3>Truffle pastry</h3>
+                    <span>₹280</span>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.ctfassets.net/27hc2gu70btq/45IldbpmAwca4AK4db8N1P/cbad0581921898c4d94323e0dcf018b4/Costa-Menu_Tiramisu-Cup.png" alt="">
+                    <h3>Tiramisu Cup</h3>
+                    <span>₹300</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</div>
+
 <footer class="footer-section">
   <div class="container">
     <div class="row">
@@ -62,7 +608,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>

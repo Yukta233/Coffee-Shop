@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container3 {
+    width: 100%;
+    overflow-x: hidden; /* prevents horizontal scroll */
+}
+
+/* General Section Styling */
+section {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+/* HERO */
+.blog-hero {
+    text-align: center;
+    padding: 120px 8%;
+}
+
+.blog-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.blog-hero p {
+    font-size: 18px;
+}
+
+/* SPLIT LAYOUT */
+.split-layout {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.split-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+.image-box {
+    flex: 1 1 500px; /* allows shrink properly */
+}
+
+.image-box img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover; /* prevents stretching */
+    border-radius: 12px;
+}
+
+.content-box {
+    flex: 1 1 500px;
+}
+
+.info-block {
+    margin-bottom: 25px;
+}
+
+.info-block h3 {
+    margin-bottom: 8px;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #858154;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 5px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 2px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* TESTIMONIALS */
+.testimonial-card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    background-color: #858154;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+/* Large Tablets */
+@media (max-width: 992px) {
+
+    section {
+        padding: 70px 6%;
+    }
+
+    .split-layout,
+    .split-layout.reverse {
+        flex-direction: column;
+    }
+
+    .image-box img {
+        height: 500px; /* reduce image height */
+    }
+
+    .blog-hero h1 {
+        font-size: 36px;
+    }
+}
+
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    .cards {
+        gap: 20px;
+    }
+
+    .card,
+    .testimonial-card {
+        flex: 1 1 45%; /* 2 per row */
+        max-width: 100%;
+    }
+
+    .image-box img {
+        height: 400px;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 576px) {
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .blog-hero {
+        padding: 70px 6%;
+    }
+
+    .blog-hero h1 {
+        font-size: 28px;
+    }
+
+    .blog-hero p {
+        font-size: 16px;
+    }
+
+    .card,
+    .testimonial-card {
+        flex: 1 1 100%; /* single column */
+    }
+
+    .image-box img {
+        height: 300px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">Mocha Muse</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="menu.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="about.html">AboutUs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="Blog.html" >Blog</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link active" href="contact.html" >Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container3">
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="blog-hero">
+        <div class="hero-content">
+            <h1>The Coffee Journal</h1>
+            <p>Brewing knowledge, expert tips, and stories crafted for true coffee lovers.</p>
+        </div>
+    </section>
+
+
+    <!-- ================= BREWING TIPS ================= -->
+    <section class="brewing-section">
+        <div class="split-layout">
+
+            <div class="image-box">
+                <img src="images/Coffee Beans.jpg" alt="Brewing Coffee">
+            </div>
+
+            <div class="content-box">
+                <h2>Coffee Brewing Tips</h2>
+                <p class="subtitle">Master the art of brewing the perfect cup.The smallest details — from grind size to water temperature — can dramatically influence flavor, aroma, and body.</p>
+
+                <div class="info-block">
+                    <h3>Use Freshly Ground Beans</h3>
+                    <p>
+                        Grinding beans just before brewing preserves aroma, flavor,
+                        and essential oils that give coffee its richness.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Perfect Water Temperature</h3>
+                    <p>
+                        Brew between 90–96°C to extract balanced flavors without bitterness.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Correct Coffee-to-Water Ratio</h3>
+                    <p>
+                        A 1:15 ratio ensures smooth, balanced extraction every time.Once you find your preferred ratio, you can replicate your perfect cup every time.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= COFFEE KNOWLEDGE ================= -->
+    <section class="knowledge-section">
+        <div class="split-layout reverse">
+
+            <div class="content-box">
+                <h2>Coffee Knowledge</h2>
+                <p class="subtitle">Coffee is more than just a beverage — it is shaped by origin, species, processing methods, and roasting techniques. Understanding these elements deepens your appreciation for every sip.</p>
+
+                <div class="info-block">
+                    <h3>Arabica vs Robusta</h3>
+                    <p>
+                        Arabica beans are smoother and sweeter, while Robusta
+                        offers stronger flavor and higher caffeine.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Understanding Roast Levels</h3>
+                    <p>
+                        Light roast preserves origin flavors, medium balances sweetness,
+                        and dark roast provides bold intensity.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h3>The Importance of Origin</h3>
+                    <p>
+                        Coffee from different regions carries distinct flavor notes
+                        influenced by soil, climate, and altitude.Proper extraction brings harmony between sweetness, acidity, and bitterness.
+                    </p>
+                </div>
+            </div>
+
+            <div class="image-box">
+                <img src="images/humancoffee.jpg" alt="Coffee Beans">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= ARTICLES ================= -->
+    <section class="articles-section">
+        <h2 class="section-title">Latest Articles</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="images/article1.jpg" alt="">
+                <h3>How to Brew the Perfect Pour Over</h3>
+                <p>Step-by-step guide to achieving clarity and balance in every cup.Pour over coffee is loved for its clean, bright flavor and the control it gives over every variable in the brewing process</p>
+            </div>
+
+            <div class="card">
+                <img src="images/article2.jpg" alt="">
+                <h3>The Science Behind Espresso</h3>
+                <p>Understanding extraction, pressure, and crema formation.Pour over coffee is loved for its clean, bright flavor and the control it gives over every variable in the brewing process.</p>
+              
+            </div>
+
+            <div class="card">
+                <img src="images/article3.jpg" alt="">
+                <h3>Cold Brew vs Iced Coffee</h3>
+                <p>Learn the difference and which one suits your taste.Although often confused, cold brew and iced coffee are fundamentally different in preparation and flavor.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="testimonial-section">
+        <h2 class="section-title">What Our Coffee Lovers Say</h2>
+
+        <div class="cards">
+
+            <div class="testimonial-card">
+                <p>
+                    “The brewing tips transformed my mornings. Every cup now tastes
+                    café-quality.”
+                </p>
+                <h4>— Aarav Mehta</h4>
+            </div>
+
+            <div class="testimonial-card">
+                <p>
+                    “The knowledge shared here deepened my appreciation for coffee.”
+                </p>
+                <h4>— Riya Sharma</h4>
+            </div>
+
+            <div class="testimonial-card">
+                <p>
+                    “Beautifully written and informative. My favorite coffee blog.”
+                </p>
+                <h4>— Vikram Patel</h4>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+
+
+<footer class="footer-section">
+  <div class="container">
+    <div class="row">
+
+      <!-- Brand Section -->
+      <div class="col-md-4 mb-4">
+        <h3 class="footer-brand">Mocha Muse</h3>
+        <p class="footer-text">
+          At Mocha Muse, 
+          We blend tradition and taste to create moments worth savoring.
+          Discover comfort, aroma, and warmth in every sip.
+        </p>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="col-md-4 mb-4">
+        <h5 class="footer-heading">Quick Links</h5>
+        <ul class="footer-links list-unstyled">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-md-4 mb-4">
+        <h5 class="footer-heading">Connect With Us</h5>
+        <div class="social-icons">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Line -->
+    <div class="footer-bottom text-center mt-4">
+      <p>© 2025 Mocha Muse. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
